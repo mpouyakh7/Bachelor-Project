@@ -1,0 +1,175 @@
+create virtual machines with system req
+install centos 7 
+ip address 192.168.100.X
+gateway 192.168.100.2
+network adapter vmnet2
+
+
+then install 
+yum install open-vm-tools -y 
+
+
+add host names to /etc/hosts 
+
+127.0.0.1 localhost
+cat <<EOF >> /etc/hosts 
+192.168.43.179 k8s-master
+192.168.43.174 worker-node1
+192.168.100.50 worker-node2
+
+EOF
+
+
+add repository for kubernets centos 7 
+ 
+
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
+
+
+
+ cat <<EOF >>  /etc/sysctl.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
+EOF
+
+sysctl -p 
+
+
+
+setenforce 0
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10255/tcp
+firewall-cmd --permanent --add-port=30000-32767/tcp
+firewall-cmd --permanent --add-port=6783/tcp
+firewall-cmd  --reload
+echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+swapoff -a
+
+systemctl restart docker && systemctl enable docker
+systemctl restart docker && systemctl enable docker
+yum  install kubeadm docker -y
+
+kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.43.179
+
+
+mkdir -p $HOME/.kube
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+
+export kubever=$(kubectl version | base64 | tr -d '\n')
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
+
+
+export ARCH=amd64
+curl -sSL "https://github.com/coreos/flannel/blob/master/Documentation/kube-flannel.yml?raw=true" | sed "s/amd64/${ARCH}/g" | kubectl create -f -
+
+
+tail -f /var/log/messages
+
+
+#########################worker node 
+
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
+
+
+
+
+
+
+setenforce 0
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10255/tcp
+firewall-cmd --permanent --add-port=30000-32767/tcp
+firewall-cmd --permanent --add-port=6783/tcp
+firewall-cmd  --reload
+echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+swapoff -a
+yum  install kubeadm docker -y
+systemctl restart docker && systemctl enable docker
+systemctl restart docker && systemctl enable docker
+
+systemctl enable kubelet.service --now 
+
+
+
+
+
+
+
+
+kubeadm join 192.168.100.128:6443 --token 3krrfr.om68oj9qtdgjtxwe \
+    --discovery-token-ca-cert-hash sha256:5272adb53e0c72de9a77112fd7e6f9c1f24fb8823247698fc47378f3ed9192bf 
+
+--------------------------------------------------------------------------------------------------
+setenforce 0
+
+yum install iptables-services.x86_64 -y
+systemctl stop firewalld.service
+systemctl disable firewalld.service
+systemctl mask firewalld.service
+systemctl start iptables
+systemctl enable iptables
+systemctl unmask iptables
+iptables -F
+service iptables save
+
+
+cat < /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=http://yum.kubernetes.io/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=http://packages.cloud.google.com/yum/doc/yum-key.gpg
+http://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+
+EOF
+
+yum install -y docker kubelet kubeadm kubectl kubernetes-cni
+
+systemctl enable docker 
+systemctl start docker
+systemctl enable kubelet
+
+kubeadm init –pod-network-cidr=10.244.0.0/16
+
+
+some issues = 1. systemd instead of cgroups for docker
+
+2. readonly file system --> solution = restrart docker and kubelet
+3. postgres = /mnt/data --> sol mkdir
+
+
+
+
+
+
+
+
+
+
+

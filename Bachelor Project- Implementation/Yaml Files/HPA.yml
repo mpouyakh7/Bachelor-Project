@@ -1,0 +1,22 @@
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: pouya-nginx-ingress-controller
+  namespace: default
+spec: 
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: pouya-nginx-ingress-controller
+  minReplicas: 1
+  maxReplicas: 10
+  metrics: 
+  - type: Pods
+    pods:
+      metricName: requests_per_second
+      targetAverageValue: 1000
+  - type: Pods
+    pods:
+      metricName: response_latency_ms_99th
+      targetAverageValue: 200
+ 

@@ -1,0 +1,46 @@
+kubeadm join 192.168.43.159:6443 --token 0gvohk.nvz098qjy0ymupao \
+    --discovery-token-ca-cert-hash sha256:0561d8a5a0c56a3564303c36075275cb66724bc72a31af3b6dc94d561b2f52c6 
+
+===================================================================================
+eyJhbGciOiJSUzI1NiIsImtpZCI6ImNGcWp1eEMwZEN5X1gzblREblFOUzAweHg3YVU2VUNHOWU1UXFMWm0xNzQifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLWxucWRtIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIyY2MyYjM3OC04YzkzLTQ3NmMtODQwMS05MWJmM2FjZjYwNGIiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.rgmGtcqXbhc7A5Bqr1WheJMQ5ScQUtqlqZag-fgxJCE3glsCET6TZTAAlb9eLRE2EHCvOoBS8_L3LO_wWtEsVgF10ZfyvURFFf2Fy7EH42Bfw6HbqBRIpce8jmYNC1zTwxCJYBCePGEuO2SSiS-lBWBfsAcZ8ExyxlJXj6sR0Keo5XA8So6t_qokckCJY1k8-baKzymTwefnA8AsKFZOWEybNax9IQGyjhiD8qiAVUqHaV-KeOvtQjkP4kkWERCmhhjmrUlv0ZvMV53aO7VIWSLFQi5-MgZ2AAH6WUFk2g0Ix039bNVA6eN2jMTFwebl4fuIg0WyR5IaJhLpxoeblg
+
+apt-mark unhold kubeadm && \
+apt-get update && apt-get install -y kubeadm=1.18.2-00 && \
+apt-mark hold kubeadm
+
+=====================================================================================================
+1. Get your 'admin' user password by running:
+
+   kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+2. The Grafana server can be accessed via port 80 on the following DNS name from within your cluster:
+
+   grafana.grafana.svc.cluster.local
+
+   Get the Grafana URL to visit by running these commands in the same shell:
+export NODE_PORT=$(kubectl get --namespace grafana -o jsonpath="{.spec.ports[0].nodePort}" services grafana)
+     export NODE_IP=$(kubectl get nodes --namespace grafana -o jsonpath="{.items[0].status.addresses[0].address}")
+     echo http://$NODE_IP:$NODE_PORT
+
+
+3. Login with the password from step 1 and the username: admin
+
+======================================================================================================================
+helm install grafana stable/grafana  --values /tmp/grafana.values --namespace grafana
+
+helm install pouya nginx-stable/nginx-ingress
+
+helm install metrics-server stable/metrics-server --namespace metrics --values /tmp/metrics-server.values 
+helm show values stable/metrics-server
+
+helm install prometheus stable/prometheus
+===================================================================================================
+kubectl autoscale deployment pouya-nginx-ingress-default-backend --cpu-percent 50 --min 1 --max 5
+
+====================================================================================================
+
+kubectl get -n emojivoto deploy/web -o yaml \
+  | linkerd inject - \
+  | kubectl apply -f -
+
+======================================================================================================

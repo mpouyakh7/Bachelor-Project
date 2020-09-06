@@ -1,0 +1,133 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: pouya-nginx-ingress-controller
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/pouya-nginx-ingress-controller
+  uid: 4aafdd42-529c-41c3-b09a-b22fcc4f3ed4
+  resourceVersion: '2847419'
+  generation: 8
+  creationTimestamp: '2020-04-18T21:48:54Z'
+  labels:
+    app: nginx-ingress
+    app.kubernetes.io/component: controller
+    chart: nginx-ingress-1.36.2
+    heritage: Helm
+    release: pouya
+  annotations:
+    deployment.kubernetes.io/revision: '8'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-ingress
+      release: pouya
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-ingress
+        app.kubernetes.io/component: controller
+        component: controller
+        release: pouya
+    spec:
+      containers:
+        - name: nginx-ingress-controller
+          image: >-
+            quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.30.0
+          args:
+            - /nginx-ingress-controller
+            - >-
+              --default-backend-service=default/pouya-nginx-ingress-default-backend
+            - '--election-id=ingress-controller-leader'
+            - '--ingress-class=nginx'
+            - '--configmap=default/pouya-nginx-ingress-controller'
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+            - name: https
+              containerPort: 443
+              protocol: TCP
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+          resources: {}
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 10254
+              scheme: HTTP
+            initialDelaySeconds: 10
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 10254
+              scheme: HTTP
+            initialDelaySeconds: 10
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          resources:
+            limits:
+              cpu: 100m
+            requests:
+              cpu: 100m
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            capabilities:
+              add:
+                - NET_BIND_SERVICE
+              drop:
+                - ALL
+            runAsUser: 101
+            allowPrivilegeEscalation: true
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 60
+      dnsPolicy: ClusterFirst
+      serviceAccountName: pouya-nginx-ingress
+      serviceAccount: pouya-nginx-ingress
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 8
+  replicas: 2
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  unavailableReplicas: 1
+  conditions:
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2020-04-19T17:44:16Z'
+      lastTransitionTime: '2020-04-19T17:44:16Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2020-04-24T12:23:02Z'
+      lastTransitionTime: '2020-04-18T21:48:54Z'
+      reason: ReplicaSetUpdated
+      message: ReplicaSet "pouya-nginx-ingress-controller-5b4b675677" is progressing.

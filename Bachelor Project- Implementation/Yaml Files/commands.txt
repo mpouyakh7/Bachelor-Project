@@ -1,0 +1,1000 @@
+ 1001  kubectl logs -f webapp-785d5b86bf-hpp4s -n fleet
+ 1002  kubectl get pods -n fleet
+ 1003  kubectl logs -f webapp-785d5b86bf-7hszr -n fleet
+ 1004  ls
+ 1005  cd k8s-fleetman/
+ 1006  ls
+ 1007  cd k8s-fleetman-webapp-angular/
+ 1008  chmod 777 *
+ 1009  ls
+ 1010  docker build -t mpouyakh/webapp-angular . 
+ 1011  docker push -t mpouyakh/webapp-angular . 
+ 1012  docker push mpouyakh/webapp-angular
+ 1013  docker login
+ 1014  docker push mpouyakh/webapp-angular
+ 1015  kubectl apply -f fleet -n fleet
+ 1016  cd ..
+ 1017  ls
+ 1018  kubectl apply -f fleet -n fleet
+ 1019  kubectl top pods
+ 1020  kubectl top pods --all-namespaces
+ 1021  ls
+ 1022  cd k8s-fleetman/
+ 1023  cd k8s-fleetman-webapp-angular/
+ 1024  docker build -t mpouyakh/webapp-angular . 
+ 1025  docker push mpouyakh/webapp-angular:v1
+ 1026  docker build -t mpouyakh/webapp-angular:v1 . 
+ 1027  docker push mpouyakh/webapp-angular:v1
+ 1028  docker build -t mpouyakh/webapp-angular:v1 . 
+ 1029  docker push mpouyakh/webapp-angular:v1
+ 1030  cd ..
+ 1031  ls
+ 1032  cd fleet/
+ 1033  kubectl apply -f fleet -n fleet
+ 1034  cd .
+ 1035  kubectl apply -f fleet -n fleet
+ 1036  cd ..
+ 1037  kubectl apply -f fleet -n fleet
+ 1038  cd k8s-fleetman/
+ 1039  cd k8s-fleetman-webapp-angular/
+ 1040  docker build -t mpouyakh/webapp-angular:v2 . 
+ 1041  docker push mpouyakh/webapp-angular:v2
+ 1042  cd ..
+ 1043  kubectl apply -f fleet -n fleet
+ 1044  docker images
+ 1045  docker rm d306aebfbe0d
+ 1046  docker image rm d306aebfbe0d
+ 1047  docker image rm cbfa00cb0ce4
+ 1048  docker image rm cbfa00cb0ce4 --force
+ 1049  docker image rm  --force
+ 1050  docker image rm cbfa00cb0ce4 --force
+ 1051  docker images
+ 1052  cd k8s-fleetman/
+ 1053  cd k8s-fleetman-webapp-angular/
+ 1054  docker build -t mpouyakh/webapp-angular:v3 . 
+ 1055  docker push mpouyakh/webapp-angular:v3
+ 1056  cd ..
+ 1057  kubectl apply -f fleet -n fleet
+ 1058  docker images
+ 1059  kubectl apply -f fleet -n fleet
+ 1060  cd k8s-fleetman/
+ 1061  cd k8s-fleetman-webapp-angular/
+ 1062  docker build -t mpouyakh/webapp-angular:v4 . 
+ 1063  docker push mpouyakh/webapp-angular:v4
+ 1064  docker images
+ 1065  docker image rm 5e7f3a25ed03 be912ce0f7ab --force
+ 1066  cd .. 
+ 1067  cd ..
+ 1068  kubectl apply -f fleet -n fleet
+ 1069  cd k8s-fleetman/
+ 1070  cd k8s-fleetman-webapp-angular/
+ 1071  docker build -t mpouyakh/webapp-angular:v5 . 
+ 1072  docker push mpouyakh/webapp-angular:v5
+ 1073  cd ..
+ 1074  kubectl apply -f fleet -n fleet
+ 1075  kubectl get services -n fleet
+ 1076  kubectl delete ns fleet
+ 1077  kubectl apply -f fleet 
+ 1078  kubectl get pods
+ 1079  kubectl top  pods -n default
+ 1080  kubectl apply -f fleet 
+ 1081  kubectl top  pods -n default
+ 1082  kubectl deployment  pods -n default
+ 1083  kubectl get deployment -n default
+ 1084  kubectl delete deployment queue position-simulator position-tracker -n default
+ 1085  kubectl get deployment -n default
+ 1086  kubectl delete deployment mongodb api-gateway -n default
+ 1087  kubectl get deployment -n default
+ 1088  kubectl get service -n default
+ 1089  kubectl delete service fleetman-api-gateway fleetman-mongodb fleetman-position-tracker fleetman-queue fleetman-webapp -n default
+ 1090  kubectl get service -n default
+ 1091  kubectl apply -f fleet 
+ 1092  kubectl describe node/mpouyakh
+ 1093  kubectl apply -f fleet 
+ 1094  wget https://go.skype.com/skypeforlinux-64.deb
+ 1095  sudo apt install ./skypeforlinux-64.deb
+ 1096  kubectl get pods -n default
+ 1097  helm install pouya stable/nginx-ingress
+ 1098  kubectl get pods -n default
+ 1099  kubectl log pod/pouya-nginx-ingress-controller-58b6dd7689-j8795
+ 1100  kubectl logs pod/pouya-nginx-ingress-controller-58b6dd7689-j8795
+ 1101  kubectl get pods -n default
+ 1102  helm install prometheus stable/prometheus  
+ 1103  kubectl describe node mpouyakh
+ 1104  kubectl describe node worker-node
+ 1105  kubectl describe node mpouyakh
+ 1106  kubectl describe node worker-node
+ 1107  kubectl describe node mpouyakh
+ 1108  kubectl describe node worker-node
+ 1109  kubectl describe node mpouyakh
+ 1110  kubectl describe node worker-node
+ 1111  kubectl describe node mpouyakh
+ 1112  kubectl describe node worker-node
+ 1113  kubectl describe node mpouyakh
+ 1114  kubectl describe node worker-node
+ 1115  kubectl describe node mpouyakh
+ 1116  nano /tmp/grafana.values
+ 1117  helm inspect values stable/grafana >> /tmp/grafana.values
+ 1118  nano /tmp/grafana.values
+ 1119  helm install grafana stable/grafana  --values /tmp/grafana.values --namespace grafana
+ 1120  kubectl top nodes
+ 1121  kubectl describe mpouyakh
+ 1122  kubectl describe node/mpouyakh
+ 1123  kubectl top pods
+ 1124  kubectl top pods --all-namespaces
+ 1125  kubectl get pods -n default
+ 1126  kubectl top pods --all-namespaces
+ 1127  kubectl describe mpouyakh
+ 1128  kubectl describe node/ mpouyakh
+ 1129  kubectl describe node/mpouyakh
+ 1130  kubectl describe node/mpouyakh-m
+ 1131  kubectl top pods --all-namespaces
+ 1132  kubectl describe node/mpouyakh
+ 1133  kubectl top pods --all-namespaces
+ 1134  kubectl autoscale deployment pouya-nginx-ingress-controller --cpu-percent 50 --min 1 --max 5 
+ 1135  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1136  kubectl autoscale deployment pouya-nginx-ingress-controller --cpu-percent 50 --min 1 --max 5 
+ 1137  kubectl top pods --all-namespaces
+ 1138  kubectl describe node/mpouyakh
+ 1139  kubectl top pods --all-namespaces
+ 1140  kubectl describe node/mpouyakh
+ 1141  kubectl get hpa
+ 1142  kubectl describe node/mpouyakh
+ 1143  kubectl top pods --all-namespaces
+ 1144  kubectl describe node/mpouyakh
+ 1145  kubectl get hpa
+ 1146  kubectl describe hpa/pouya-nginx-ingress-controller
+ 1147  kubectl describe node/mpouyakh
+ 1148  kubectl get hpa
+ 1149  kubectl describe node/mpouyakh
+ 1150  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1151  kubectl get hpa
+ 1152  kubectl autoscale deployment pouya-nginx-ingress-controller --cpu-percent 50 --min 1 --max 5 
+ 1153  kubectl describe node/mpouyakh
+ 1154  kubectl top pods --all-namespaces
+ 1155  kubectl get hpa
+ 1156  kubectl describe hpa/pouya-nginx-ingress-controller
+ 1157  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1158  kubectl get hpa
+ 1159  kubectl describe hpa/pouya-nginx-ingress-controller
+ 1160  kubectl top pods --all-namespaces
+ 1161  kubectl describe node/mpouyakh
+ 1162  kubectl get hpa
+ 1163  kubectl autoscale deployment pouya-nginx-ingress-controller --cpu-percent 50 --min 1 --max 5 
+ 1164  kubectl get hpa
+ 1165  kubectl describe hpa/pouya-nginx-ingress-controller
+ 1166  kubectl top pods --all-namespaces
+ 1167  kubectl describe hpa/pouya-nginx-ingress-controller
+ 1168  kubectl get hpa
+ 1169  kubectl top pods --all-namespaces
+ 1170  kubectl describe node/mpouyakh
+ 1171  kubectl describe hpa/pouya-nginx-ingress-controller
+ 1172  kubectl get hpa
+ 1173  kubectl describe hpa/pouya-nginx-ingress-controller
+ 1174  kubectl top pods --all-namespaces
+ 1175  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1176  kubectl top pods --all-namespaces
+ 1177  kubectl describe node/mpouyakh
+ 1178  kubectl autoscale deployment pouya-nginx-ingress-controller pouya-nginx-ingress-default-backend-95b66b7b-xszd9 --cpu-percent 50 --min 1 --max 5 
+ 1179  kubectl autoscale deployment pouya-nginx-ingress-default-backend --cpu-percent 50 --min 1 --max 5 
+ 1180  kubectl get hpa
+ 1181  kubectl describe hpa/pouya-nginx-ingress-controller
+ 1182  kubectl get hpa
+ 1183  kubectl describe hpa/pouya-nginx-ingress-controller
+ 1184  which seige
+ 1185  which siege
+ 1186  kubectl get hpa
+ 1187  kubectl top pods
+ 1188  kubectl get hpa
+ 1189  kubectl top pods
+ 1190  kubectl get hpa
+ 1191  kubectl top pods
+ 1192  kubectl get hpa
+ 1193  kubectl top pods
+ 1194  kubectl get hpa
+ 1195  kubectl top pods
+ 1196  kubectl get hpa
+ 1197  kubectl top pods
+ 1198  kubectl get hpa
+ 1199  kubectl top pods
+ 1200  kubectl get hpa
+ 1201  kubectl delete ns prometheus
+ 1202  kubectl get hpa
+ 1203  kubectl create ns fleet
+ 1204  kubectl get services
+ 1205  kubectl top pods
+ 1206  kubectl top pods --all-namespaces
+ 1207  kubectl get pods
+ 1208  kubectl get pods -n kubernetes-dashboard
+ 1209  kubectl delete pod/kubernetes-dashboard-5996555fd8-dkskv -n kubernetes-dashboard
+ 1210  kubectl get pods -n kubernetes-dashboard
+ 1211  kubectl get pods -n --all-namespaces
+ 1212  kubectl get pods -n default
+ 1213  kubectl describe pod/webapp-785d5b86bf-k6c4r -n default
+ 1214  kubectl delete pod/webapp-785d5b86bf-k6c4r -n default
+ 1215  kubectl get pods -n default
+ 1216  kubectl describe pod/webapp-785d5b86bf-zz9jv -n default
+ 1217  kubectl describe node/mpouyakh
+ 1218  kubectl describe node/worker-node2
+ 1219  kubectl describe node/mpouyakh
+ 1220  kubectl describe node/worker-node2
+ 1221  kubectl describe node/mpouyakh
+ 1222  kubectl describe node/worker-node2
+ 1223  kubectl describe node/mpouyakh
+ 1224  kubectl describe node/worker-node2
+ 1225  kubectl describe node/mpouyakh
+ 1226  kubectl describe node/worker-node2
+ 1227  kubectl describe node/mpouyakh
+ 1228  kubectl get pods -n default
+ 1229  kubectl describe pod/webapp-785d5b86bf-bxmf9 -n default
+ 1230  kubectl describe node/mpouyakh
+ 1231  kubectl describe node/worker-node2
+ 1232  kubectl describe node/mpouyakh
+ 1233  kubectl get pods -n default
+ 1234  kubectl describe node/mpouyakh
+ 1235  kubectl get pods -n default
+ 1236  kubectl get pods -n kubernetes-dashboard
+ 1237  kubectl delete pod/kubernetes-dashboard-5996555fd8-j5hdw -n kubernetes-dashboard
+ 1238  kubectl get pods -n kubernetes-dashboard
+ 1239  kubectl get pods -n default
+ 1240  kubectl describe node/mpouyakh
+ 1241  kubectl get pods -n default
+ 1242  kubectl describe node/mpouyakh
+ 1243  kubectl get pods -n default
+ 1244  kubectl describe node/mpouyakh
+ 1245  kubectl get pods -n default
+ 1246  kubectl get pods --all-namespaces
+ 1247  kubectl top podes
+ 1248  kubectl top pods
+ 1249  kubectl get svc
+ 1250  kubectl describe svc fleetman-api-gateway
+ 1251  kubectl get po --show-labels
+ 1252  kubectl logs
+ 1253  kubectl top pods
+ 1254  kubectl logs
+ 1255  kubectl describe svc fleetman-api-gateway
+ 1256  kubectl get svc
+ 1257  kubectl describe svc fleetman-api-gateway
+ 1258  kubectl top pods
+ 1259  kubectl get hpa
+ 1260  kubectl top pods
+ 1261  kubectl get hpa
+ 1262  kubectl top pods
+ 1263  kubectl get pods
+ 1264  kubectl get hpa
+ 1265  kubectl top pods
+ 1266  kubectl get hpa
+ 1267  kubectl get deployment
+ 1268  ubectl autoscale deployment client-deployment --cpu-percent 60 --min 1 --max 5
+ 1269  kubectl autoscale deployment client-deployment --cpu-percent 60 --min 1 --max 5
+ 1270  kubectl get hpa
+ 1271  kubectl top pods
+ 1272  kubectl get hpa
+ 1273  kubectl top pods
+ 1274  kubectl get hpa
+ 1275  kubectl top pods
+ 1276  kubectl get hpa
+ 1277  kubectl top pods
+ 1278  kubectl get hpa
+ 1279  kubectl top pods
+ 1280  kubectl get hpa
+ 1281  kubectl top pods
+ 1282  kubectl autoscale deployment server-deployment --cpu-percent 80 --min 1 --max 5
+ 1283  kubectl get hpa
+ 1284  kubectl top pods
+ 1285  kubectl get hpa
+ 1286  kubectl top pods
+ 1287  kubectl get hpa
+ 1288  kubectl autoscale deployment worker-deployment --cpu-percent 80 --min 1 --max 5
+ 1289  kubectl get hpa
+ 1290  kubectl top pods
+ 1291  kubectl get hpa
+ 1292  kubectl get deployment
+ 1293  kubectl autoscale deployment prometheus-server --cpu-percent 80 --min 1 --max 5
+ 1294  kubectl get hpa
+ 1295  kubectl get service --all-namespaces
+ 1296  kubectl get hpa
+ 1297  kubectl top pods
+ 1298  kubectl describe node/mpouyakh
+ 1299  kubectl get hpa
+ 1300  kubectl get pods -n default
+ 1301  kubectl get services -n default
+ 1302  kubectl get hpa
+ 1303  kubectl describe node/mpouyakh
+ 1304  nano /etc/hosts
+ 1305  kubectl get ingress
+ 1306  nano /etc/hosts
+ 1307  kubectl get pods
+ 1308  kubectl get hpa
+ 1309  nano /etc/hosts
+ 1310  startx
+ 1311  cat /etc/x11/default-display-manager
+ 1312  sudo /etc/init.d/gdm restart
+ 1313  sudo apt-get remove --purge unity-greeter
+ 1314  kubectl get pods
+ 1315  sudo apt-get -y install lightdm-gtk-greeter
+ 1316  reboot
+ 1317  sudo service gdm restart
+ 1318  cd /etc/apt
+ 1319  ls
+ 1320  cat sources.list
+ 1321  sudo nano /etc/default/grub
+ 1322  sudo update-grub
+ 1323  sudo reboot
+ 1324  sudo apt install gnome-shell
+ 1325  tty
+ 1326  gui
+ 1327  cd ..
+ 1328  cd /home
+ 1329  ls -lah | grep -i Xauthority
+ 1330  cd /home/mpouyakh
+ 1331  ls -lah | grep -i Xauthority
+ 1332  startx
+ 1333  sudo systemctl restart lightdm
+ 1334  sudo systemctl enable lightdm
+ 1335  sudo systemctl restart lightdm
+ 1336  sudo systemctl restart dgm
+ 1337  sudo systemctl set-default graphical.target
+ 1338  sudo systemctl start gdm3.service
+ 1339  reboot
+ 1340  sudo systemctl start gdm3.service
+ 1341  sudo systemctl set-default graphical.target
+ 1342  sudo systemctl start gdm3.service
+ 1343  gdm3
+ 1344  sudo systemctl start gdm3
+ 1345  sudo /etc/init.d/gdm
+ 1346  sudo /etc/init.d/gdm3
+ 1347  ls /etc/init.d | grep dgm
+ 1348  ls /etc/init.d | grep dgm3
+ 1349  ls /etc/init.d | grep gdm
+ 1350  ls /etc/init.d | grep gdm3
+ 1351  cat /etc/X11/default-display-manager 
+ 1352  which gdm
+ 1353  which gdm3
+ 1354  which gdm
+ 1355  ls /etc/init.d | grep gdm3
+ 1356  cat /etc/X11/default-display-manager 
+ 1357  which gdm
+ 1358  xinit /usr/bin/gnome-session -- /usr/bin/X :0
+ 1359  sudo systemctl start gdm3
+ 1360  sudo /etc/init.d/gdm3 restart
+ 1361  sudo /etc/init.d/gdm restart
+ 1362  sudo /etc/init.d/gdm3 restart
+ 1363  sudo systemctl start gdm3
+ 1364  sudo /etc/init.d/gdm3 restart
+ 1365  sudo rm ~/.Xauthority
+ 1366  systemctl restart gdm3
+ 1367  systemctl restart gdm
+ 1368  sudo apt purge gdm gdm3
+ 1369  sudo apt install gdm gdm3
+ 1370  sudo apt install gdm3
+ 1371  sudo dpkg --configure -a
+ 1372  sudo apt-get install -f
+ 1373  sudo apt-get clean && sudo apt-get update
+ 1374  sudo apt-get upgrade
+ 1375  sudo apt-get upgrade --fix=missing
+ 1376  sudo apt-get upgrade --fix-missing
+ 1377  sudo apt install gdm3
+ 1378  sudo apt install gnome-shell
+ 1379  sudo apt-get purge zlib1g-dev
+ 1380  systemctl restart gdm3
+ 1381  sudo /etc/init.d/gdm3 restart
+ 1382  sudo systemctl start gdm3
+ 1383  ls /etc/init.d | grep gdm3
+ 1384  sudo /etc/init.d/gdm3
+ 1385  sudo systemctl start gdm3.service
+ 1386  sudo apt install gdm3
+ 1387  sudo /etc/init.d/gdm3
+ 1388  sudo systemctl start gdm3.service
+ 1389  sudo apt install ubuntu-gnome-desktop
+ 1390  sudo apt install ubuntu-desktop
+ 1391  ls
+ 1392  cd Desktop/
+ 1393  ls
+ 1394  cd ..
+ 1395  ls
+ 1396  cd mpouyakh/
+ 1397  ls
+ 1398  sudo apt-get install tasksel
+ 1399  sudo apt-get install slim
+ 1400  sudo apt-get install lightdm
+ 1401  tasksel
+ 1402  sudo apt-get install lightdm
+ 1403  sudo apt-get install slim
+ 1404  tasksel
+ 1405  sudo service slim start
+ 1406  sudo apt-get auto-remove lightdm
+ 1407  sudo apt-get install lightdm
+ 1408  tasksel
+ 1409  sudo apt-get install lightdm
+ 1410  tasksel
+ 1411  sudo apt-get install ubuntu-gnome-desktop
+ 1412  sudo tasksel ubuntu-desktop
+ 1413  sudo tasksel install ubuntu-desktop
+ 1414  sudo apt update apt-get
+ 1415  sudo apt install apt-get
+ 1416  sudo service lightdm start
+ 1417  sudo apt install gnome-session
+ 1418  sudo apt-get autoclean
+ 1419  sudo apt-get autoremove
+ 1420  sudo apt-get -f install
+ 1421  dpkg --configure -a
+ 1422  sudo apt-get remove --auto-remove
+ 1423  sudo apt-get install libapache2-mod-wsgi
+ 1424  sudo apt install gnome-session
+ 1425  sudo tasksel install ubuntu-desktop
+ 1426  sudo apt upgrade --fix-missing
+ 1427  sudo apt install libsensors4
+ 1428  sudo apt upgrade --fix-missing
+ 1429  sudo tasksel install ubuntu-desktop
+ 1430  sudo apt install gnome-session
+ 1431  sudo apt install ubuntu-gnome-desktop
+ 1432  tasksel
+ 1433  sudo apt-get update
+ 1434  dpkg --configure -a
+ 1435  sudo tasksel
+ 1436  sudo tasksel install lamp-server
+ 1437  sudo tasksel
+ 1438  sudo tasksel install ubuntu-desktop
+ 1439  reboot
+ 1440  sudo tasksel
+ 1441  sudo add-apt-repository ppa:gnome3-team/gnome3-staging
+ 1442  sudo add-apt-repository ppa:gnome3-team/gnome3
+ 1443  sudo apt-get update
+ 1444  sudo apt-get dist-upgrade
+ 1445  sudo apt-get dist-upgrade --fix-missing
+ 1446  sudo tasksel install ubuntu-desktop
+ 1447  sudo tasksel install kubuntu-desktop
+ 1448  sudo tasksel install xfce4-slim
+ 1449  sudo service slim start
+ 1450  sudo apt-get install lxde
+ 1451  reboot
+ 1452  cat ~/.xinitrc:
+ 1453  cat ~/.xinitrc
+ 1454  /etc/init.d/lxdm start
+ 1455  sudo /etc/init.d/lxdm start
+ 1456  sudo apt-get install lxde
+ 1457  sudo /etc/init.d/lxde start
+ 1458  sudo apt-get install lxdm
+ 1459  sudo /etc/init.d/lxdm start
+ 1460  ls
+ 1461  kubeadm
+ 1462  synclient -l
+ 1463  apt install xserver-xorg-input-synaptics
+ 1464  synclient -l
+ 1465  sudo apt-get install gsynatics
+ 1466  sudo apt-get install gsynaptics
+ 1467  sudo apt install gsynaptics
+ 1468  synclient -l
+ 1469  sudo apt install synaptics
+ 1470  sudo apt=get install synaptics
+ 1471  sudo apt-get install synaptics
+ 1472  sudo apt-get install xsever-xorg-input-synaptics
+ 1473  sudo nano /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1474  sudo cat /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1475  sudoedit  /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1476  sudo cat >> /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1477  sudo cat > /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1478  sudo nano /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1479  sudo cat > /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1480  sudo cat /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1481  xinput list
+ 1482  Synaptics
+ 1483  sudo apt install Synaptics
+ 1484  sudoedit  /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1485  sudoedit  /etc/X11/xorg.conf.d
+ 1486  cat > /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1487  cat >> /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1488  sudo cat /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1489  cat > samtple.txt
+ 1490  cd /etc/X11/xorg.conf.d
+ 1491  cd /etc/X11
+ 1492  ls
+ 1493  mkdir xorg.conf.d
+ 1494  cd /etc/X11/xorg.conf.d
+ 1495  cat > 30-touchpad.conf
+ 1496  cat  30-touchpad.conf
+ 1497  nano 30-touchpad.conf
+ 1498  cd ..
+ 1499  ls
+ 1500  cd home/
+ 1501  ls
+ 1502  cd mpouyakh/
+ 1503  sudo cat /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1504  sudo apt-get install brightness-controller
+ 1505  lxqt-config-powermanagement
+ 1506  apt install lxqt-powermanagement
+ 1507  sudo apt-get update
+ 1508  apt install lxqt-powermanagement
+ 1509  apt install lxdm-powermanagement
+ 1510  apt install lxde-powermanagement
+ 1511  sudo apt-get install xfce4-power-manager 
+ 1512  sudo cat /etc/X11/xorg.conf.d/30-touchpad.conf
+ 1513  sudo add-apt-repository ppa:atareao/atareao
+ 1514  sudo apt-get install touchpad-indicator
+ 1515  sudo apt-get install gsynaptics
+ 1516  gpointing-device-settings
+ 1517  sudo apt-get install touchpad-indicator
+ 1518  sudo apt-get install python3-evdev
+ 1519  kubectl get -n emojivoto deploy -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1520  linkerd
+ 1521  Linkerd
+ 1522  linkerd check
+ 1523  kubectl -n linkerd get deploy
+ 1524  linkerd check
+ 1525  linkerd -n emojivoto stat deploy
+ 1526  kubectl -n linkerd get deploy
+ 1527  ls
+ 1528  linkerd -n linkerd top deploy/linkerd-web
+ 1529  curl -sL https://run.linkerd.io/emojivoto.yml   | kubectl apply -f -
+ 1530  kubectl -n emojivoto port-forward svc/web-svc 8080:80
+ 1531  kubectl get -n emojivoto deploy/web -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1532  linkerd -n linkerd top deploy/linkerd-web
+ 1533  kubectl get pods
+ 1534  kubectl get pods ns kuberetes-dashboard
+ 1535  kubectl get pods --namespace kuberetes-dashboard
+ 1536  kubectl get pods --namespace kubernetes-dashboard
+ 1537  kubeadm token create
+ 1538  kubectl get pods --namespace kubernetes-dashboard
+ 1539  kubectl get pods
+ 1540  kubectl get nodes
+ 1541  clear
+ 1542  kubectl get pods
+ 1543  kubectl get hpa
+ 1544  kubectl get pods
+ 1545  kubectl get pods ns kubernetes-dashboard
+ 1546  kubectl get pods --namespace kubernetes-dashboard
+ 1547  kubectl get pods
+ 1548  kubectl get hpa
+ 1549  kubectl delete hpa prometheus-server
+ 1550  kubectl get hpa
+ 1551  kubectl get pods
+ 1552  kubectl get logs prometheus-server-5498c9576f-dps57
+ 1553  kubectl get log prometheus-server-5498c9576f-dps57
+ 1554  kubectl get logs  prometheus-server-5498c9576f-dps57
+ 1555  kubectl describe pod/prometheus-server-5498c9576f-dps57
+ 1556  helm list
+ 1557  helm uninstall prometheus
+ 1558  helm install prometheus stable/prometheus
+ 1559  curl -sL https://run.linkerd.io/install | sh
+ 1560  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1561  brew install linkerd
+ 1562  apt install linuxbrew-wrapper
+ 1563  linkerd version
+ 1564  apt-get install linkerd
+ 1565  apt install linkerd
+ 1566  brew install linkerd
+ 1567  apt install linuxbrew-wrapper
+ 1568  linkerd check --pre
+ 1569  kube-apiserver -h | grep enable-admission-plugins
+ 1570  linkerd install | kubectl apply -f -
+ 1571  linkerd check
+ 1572  nano /etc/hosts
+ 1573  linkerd check
+ 1574  linkerd check --pre
+ 1575  linkerd check
+ 1576  linkerd dashboard &
+ 1577  linkerd check
+ 1578  kubectl -n linkerd get deploy
+ 1579  linkerd check
+ 1580  kubectl -n linkerd get deploy
+ 1581  kubectl get -n emojivoto deploy -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1582  linkerd -n emojivoto stat deploy
+ 1583  linkerd -n emojivoto top deploy
+ 1584  linkerd -n emojivoto tap deploy/web
+ 1585  linkerd -n emojivoto top deploy
+ 1586  linkerd -n emojivoto tap deploy/web
+ 1587  linkerd -n emojivoto top deploy
+ 1588  kubectl get -n default deploy -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1589  kubectl get pods
+ 1590  kubectl get hpa
+ 1591  linkerd -n emojivoto stat deploy
+ 1592  kubectl get pods
+ 1593  linkerd -n emojivoto stat deploy
+ 1594  linkerd -n default stat deploy
+ 1595  kubectl get -n emojivoto deploy -o yaml   | linkerd inject - \
+ 1596  kubectl get -n emojivoto deploy/web -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1597  linkerd -n default stat deploy
+ 1598  linkerd -n emojivoto stat deploy
+ 1599  kubectl get -n emojivoto deploy/web -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1600  linkerd dashboard &
+ 1601  kubectl get -n emojivoto deploy -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1602  linkerd -n linkerd top deploy/linkerd-web
+ 1603  linkerd -n emojivoto stat deploy
+ 1604  kubectl get -n emojivoto deploy -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1605  linkerd check
+ 1606  linkerd -n linkerd top deploy/linkerd-web
+ 1607  linkerd -n default stat deploy
+ 1608  kubectl get hpa
+ 1609  linkerd uninstall | kubectl apply -f -
+ 1610  linkerd install --ignore-cluster | kubectl delete -f -
+ 1611  linkerd -n linkerd top deploy/linkerd-web
+ 1612  linkerd check
+ 1613  linkerd check --pre
+ 1614  kubectl delete ns linkerd
+ 1615  linkerd check --pre
+ 1616  linkerd install | kubectl apply -f -
+ 1617  kubectl delete ns emojivoto
+ 1618  kubectl get pods
+ 1619  kubectl get hpa
+ 1620  kubectl get pods -ns linkerd
+ 1621  kubectl get pods ns linkerd
+ 1622  kubectl get pods --ns linkerd
+ 1623  kubectl get pods --namespace linkerd
+ 1624  linkerd install --ignore-cluster | kubectl delete -f -
+ 1625  linkerd install | kubectl apply -f -
+ 1626  kubectl get pods --namespace linkerd
+ 1627  kubectl describe pod/linkerd-web-795458cc9-6nlxg --namespace linkerd
+ 1628  linkerd check 
+ 1629  kubectl describe pod/linkerd-web-795458cc9-6nlxg --namespace linkerd
+ 1630  kubectl get pods --namespace linkerd
+ 1631  kubectl describe pod/linkerd-heartbeat-1590910800-hwskl --namespace linkerd
+ 1632  kubectl describe pod/linkerd-web-795458cc9-6nlxg --namespace linkerd
+ 1633  linkerd dashboard &
+ 1634  kubectl describe pod/linkerd-web-795458cc9-6nlxg --namespace linkerd
+ 1635  stop
+ 1636  linkerd install --ignore-cluster | kubectl delete -f -
+ 1637  linkerd install | kubectl apply -f -
+ 1638  kubectl get pods --namespace linkerd
+ 1639  linkerd check 
+ 1640  linkerd -n linkerd top deploy/linkerd-web
+ 1641  linkerd -n linkerd stat deploy
+ 1642  linkerd dashboard &
+ 1643  linkerd -n linkerd stat deploy
+ 1644  kubectl get pods 
+ 1645  kubectl get deploy
+ 1646  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -
+ 1647  linkerd -n default stat deploy
+ 1648  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1649  linkerd -n default stat deploy
+ 1650  kubectl get -n grafana deploy -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1651  kubectl get hpa
+ 1652  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1653  kubectl get -n default deploy/client-deployment -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1654  kubectl get -n default deploy/server-deployment -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1655  kubectl get hpa
+ 1656  kubectl get -n default deploy/worker-deployment -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1657  kubectl get pods 
+ 1658  kubectl get deploy
+ 1659  kubectl get -n default deploy/webapp -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1660  kubectl get -n default deploy/api-gateway -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1661  kubectl get -n default deploy/queue -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1662  kubectl get hpa
+ 1663  kubectl get -n default deploy/position-tracker -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1664  kubectl get -n default deploy/position-simulator -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1665  kubectl get hpa
+ 1666  kubectl delete hpa/clien-deployment
+ 1667  kubectl delete autoscale/clien-deployment
+ 1668  kubectl delete autoscaling/clien-deployment
+ 1669  kubectl get hpa
+ 1670  kubectl delete hpa client-deployment
+ 1671  kubectl get hpa
+ 1672  linkerd check 
+ 1673  linkerd dashboard &
+ 1674  kubectl get hpa
+ 1675  kubectl delete hpa pouya-nginx-ingress-controller
+ 1676  kubectl delete hpa pouya-nginx-ingress-default-backend
+ 1677  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1678  kubectl get pods
+ 1679  helm -n linkerd --namespace linkerd install stable/prometheus-adapter -f hpa/prometheus-adapter.yml
+ 1680  helm  --namespace linkerd install stable/prometheus-adapter -f hpa/prometheus-adapter.yml
+ 1681  helm  linkerd --namespace linkerd install stable/prometheus-adapter -f hpa/prometheus-adapter.yml
+ 1682  helm  install linkerd stable/prometheus-adapter  --namespace linkerd -f hpa/prometheus-adapter.yml
+ 1683  cat hpa/prometheus-adapter
+ 1684  helm  install linkerd stable/prometheus-adapter  --namespace linkerd -f /home/mpouyakh/Documents/prometheus-adapter.yml
+ 1685  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1
+ 1686  make
+ 1687  make verify-system
+ 1688  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1 | jq .
+ 1689  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1 | jq 
+ 1690  apt install jq
+ 1691  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1 | jq 
+ 1692  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1 
+ 1693  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1 | jq 
+ 1694  make verify-system
+ 1695  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1 | jq 
+ 1696  hpa
+ 1697  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1 | jq 
+ 1698  helm list
+ 1699  helm list -n linkerd
+ 1700  helm uninstall linkerd -n linkerd
+ 1701  helm  install linkerd stable/prometheus-adapter  --namespace linkerd -f /home/mpouyakh/Documents/prometheus-adapter.yml
+ 1702  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1 | jq 
+ 1703  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1
+ 1704  kubectl proxy
+ 1705  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1706  linkerd daashboard --port 30000
+ 1707  linkerd dashboard --port 30000
+ 1708  kubectl get pods
+ 1709  kubectl get pods -n linkerd
+ 1710  linkerd check 
+ 1711  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1712  linkerd check 
+ 1713  kubectl describe node node-worker2
+ 1714  kubectl get nodes
+ 1715  kubectl describe node worker-node2
+ 1716  kubectl get nodes
+ 1717  kubectl describe node mpouyakh-inspiron-3521
+ 1718  kubectl describe node worker-node2
+ 1719  kubectl get hpa
+ 1720  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1721  kubectl get hpa
+ 1722  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1723  kubectl get hpa
+ 1724  kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1
+ 1725  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1726  kubectl get hpa
+ 1727  siege -c 200 -t 2 http://mpouyakh.com
+ 1728  siege -c 200 -t 3 http://mpouyakh.com
+ 1729  siege -c 200 -t 4 http://mpouyakh.com
+ 1730  siege -c 200 -t 6 http://mpouyakh.com
+ 1731  siege -c 200 -t 4 http://mpouyakh.com
+ 1732  siege -c 200 -t 6 http://mpouyakh.com
+ 1733  kubectl get hpa
+ 1734  kubectl get pods
+ 1735  kubectl get hpa
+ 1736  kubectl get pods
+ 1737  kubectl get pods -n linkerd
+ 1738  kubectl get pods
+ 1739  kubectl get -n default deploy/client-deployment -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1740  linkerd
+ 1741  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1742  kubectl get -n default deploy/client-deployment -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1743  kubectl get hpa
+ 1744  kubectl delete hpa/webapp 
+ 1745  kubectl delete hpa/position-tracker
+ 1746  kubectl get hpa
+ 1747  kubectl apply -f /home/mpouyakh/Documents/client-hpa.yml 
+ 1748  kubectl get hpa
+ 1749  kubectl delete hpa/client-deployment
+ 1750  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1751  kubectl apply -f /home/mpouyakh/Documents/client-hpa.yml 
+ 1752  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1753  kubectl get hpa
+ 1754  kubectl delete hpa/client-deployment
+ 1755  kubectl get hpa
+ 1756  kubectl apply -f /home/mpouyakh/Documents/client-hpa.yml 
+ 1757  kubectl get hpa
+ 1758  kubectl delete hpa/client-deployment
+ 1759  kubectl get hpa
+ 1760  kubectl apply -f /home/mpouyakh/Documents/client-hpa.yml 
+ 1761  kubectl get hpa
+ 1762  kubectl delete hpa/client-deployment
+ 1763  kubectl get hpa
+ 1764  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1765  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1766  kubectl get hpa
+ 1767  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1768  kubectl get hpa
+ 1769  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1770  kubectl get hpa
+ 1771  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1772  kubectl top pods
+ 1773  kubectl top nodes
+ 1774  kubectl proxy
+ 1775  kubectl get pods
+ 1776  kubectl proxy
+ 1777  kubectl get nodes
+ 1778  kubectl get hpa
+ 1779  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1780  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1781  kubectl get hpa
+ 1782  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1783  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1784  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1785  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1786  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1787  kubectl get hpa
+ 1788  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1789  kubectl get hpa
+ 1790  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1791  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1792  kubectl get hpa
+ 1793  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1794  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1795  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1796  kubectl get hpa
+ 1797  helm ls
+ 1798  helm uninstall linkerd -n linkerd
+ 1799  linkerd install --ignore-cluster | kubectl delete -f -
+ 1800  kubectl get hpa
+ 1801  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1802  linkerd install | kubectl apply -f -
+ 1803  kubectl get hpa
+ 1804  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1805  kubectl get hpa
+ 1806  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1807  helm  install linkerd stable/prometheus-adapter  --namespace linkerd -f /home/mpouyakh/Documents/prometheus-adapter.yml
+ 1808  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1809  kubectl get hpa
+ 1810  linkerd install | kubectl apply -f -
+ 1811  linkerd install --ignore-cluster | kubectl apply -f -
+ 1812  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1813  kubectl get hpa
+ 1814  linkerd install --ignore-cluster | kubectl apply -f -
+ 1815  kubectl get hpa
+ 1816  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1817  linkerd install --ignore-cluster | kubectl apply -f -
+ 1818  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1819  kubectl get hpa
+ 1820  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1821  helm ls
+ 1822  helm ls -n grafana
+ 1823  helm unistall grafana -n grafana
+ 1824  helm uninstall grafana -n grafana
+ 1825  helm uninstall linkerd -n linkerd
+ 1826  linkerd install --ignore-cluster | kubectl delete -f -
+ 1827  nano /tmp/grafana.values
+ 1828  helm show values stable/grafana
+ 1829  helm show values stable/grafana >> /tmp/grafana.values
+ 1830  nano /tmp/grafana.values
+ 1831  helm install grafana stable/grafana  --values /tmp/grafana.values --namespace grafana
+ 1832  linkerd install | kubectl apply -f -
+ 1833  ping http://10.244.2.210:9090/
+ 1834  ping 10.244.2.210:9090/
+ 1835  ping 10.244.2.210
+ 1836  ping 10.244.2.210:9090
+ 1837  ping 10.244.2.210
+ 1838  linkerd install --ignore-cluster | kubectl delete -f -
+ 1839  linkerd install | kubectl apply -f -
+ 1840  linkerd check
+ 1841  systemctl resart docker && systemctl enable docker
+ 1842  systemctl restart docker && systemctl enable docker
+ 1843  systemctl restart kubelet && systemctl enable kubelet
+ 1844  linkerd check
+ 1845  linkerd dashboard --port 30000
+ 1846  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1847  linkerd dashboard --port 30000
+ 1848  linkerd check
+ 1849  linkerd dashboard --port 30000
+ 1850  linkerd install --ignore-cluster | kubectl apply -f -
+ 1851  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1852  linkerd install --ignore-cluster | kubectl apply -f -
+ 1853  nano /tmp/grafana.values
+ 1854  helm show values stable/grafana >> /tmp/grafana.values
+ 1855  nano /tmp/grafana.values
+ 1856  helm install grafana stable/grafana  --values /tmp/grafana.values --namespace grafana
+ 1857  linkerd install --ignore-cluster | kubectl delete -f -
+ 1858  curl -sL https://run.linkerd.io/install-edge | sh
+ 1859  export PATH=$PATH:/root/.linkerd2/bin
+ 1860  linkerd check --pre
+ 1861  kubectl version
+ 1862  linkerd version
+ 1863  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1864  kubectl proxy
+ 1865  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1866  linkerd dashboard --port 30000
+ 1867  siege -c 200 -t 4 http://mpouyakh.com
+ 1868  siege -c 200 -t 4 -v http://mpouyakh.com
+ 1869  siege -c 400 -t 4 -v http://mpouyakh.com
+ 1870  nano /etc/hosts
+ 1871  nano ~/.siege/siege.conf
+ 1872  siege -c 400 -t 4 -v /home/mpouyakh/Documents/URLs.txt
+ 1873  siege -c 200 -t 4 -v /home/mpouyakh/Documents/URLs.txt
+ 1874  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1875  siege -c 200 -t 4 -v http://mpouyakh.com
+ 1876  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1877  nano ~/.siege/siege.conf
+ 1878  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1879  nano ~/.siege/siege.conf
+ 1880  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1881  nano ~/.siege/siege.conf
+ 1882  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1883  nano ~/.siege/siege.conf
+ 1884  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1885  nano ~/.siege/siege.conf
+ 1886  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1887  nano ~/.siege/siege.conf
+ 1888  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1889  nano ~/.siege/siege.conf
+ 1890  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1891  nano ~/.siege/siege.conf
+ 1892  siege -c 200 -t 4 -v http://mpouyakh.com
+ 1893  nano ~/.siege/siege.conf
+ 1894  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1895  siege -c 200 -t 4 -v http://mpouyakh.com
+ 1896  siege -c 200 -t 4 -v mpouyakh.com/home/mpouyakh/Documents/pouya/my-app/src/logo.png
+ 1897  siege -c 200 -t 4 -v http://mpouyakh.com
+ 1898  nano ~/.siege/siege.conf
+ 1899  siege -c 200 -t 4 -v http://mpouyakh.com/favicon.ico
+ 1900  siege -c 200 -t 4 -v http://mpouyakh.com/api/values/current
+ 1901  siege -c 200 -t 4 -v http://mpouyakh.com/api/values/all
+ 1902  siege -c 200 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1903  siege -c 500 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1904  siege -c 700 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1905  siege -c 900 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1906  kubectl get hpa
+ 1907  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1908  kubectl get hpa
+ 1909  helm  install linkerd stable/prometheus-adapter  --namespace linkerd -f /home/mpouyakh/Documents/prometheus-adapter.yml
+ 1910  kubectl get hpa
+ 1911  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1912  kubectl get hpa
+ 1913  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1914  kubectl get hpa
+ 1915  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1916  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1917  kubectl get hpa
+ 1918  kubectl top pods
+ 1919  kubectl get pods
+ 1920  kubectl top pods
+ 1921  kubectl get pods -n kubernetes-dashboard
+ 1922  kubectl delete  pod/kubernetes-dashboard-5996555fd8-l9c8b -n kubernetes-dashboard
+ 1923  kubectl get pods -n kubernetes-dashboard
+ 1924  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1925  linkerd dashboard --port 30000
+ 1926  kubectl proxy
+ 1927  siege -c 300 -t 4 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1928  siege -c 300 -t 5 -v -f /home/mpouyakh/Documents/URLs.txt
+ 1929  kubectl get hpa
+ 1930  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1931  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1932  kubectl get hpa
+ 1933  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1934  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1935  kubectl get hpa
+ 1936  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1937  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1938  kubectl get hpa
+ 1939  linkerd
+ 1940  linkerd dashboard --port 30000
+ 1941  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1942  linkerd dashboard --port 30000
+ 1943  kubectl get hpa
+ 1944  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1945  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1946  kubectl get hpa
+ 1947  kubectl get pods
+ 1948  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1949  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1950  kubectl get pods
+ 1951  kubectl get hpa
+ 1952  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1953  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1954  kubectl get hpa
+ 1955  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1956  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1957  kubectl get hpa
+ 1958  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1959  kubectl apply -f /home/mpouyakh/Documents/HPA.yml 
+ 1960  kubectl get hpa
+ 1961  kubectl delete hpa/pouya-nginx-ingress-controller
+ 1962  linkerd
+ 1963  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1964  linkerd dashboard --port 30000
+ 1965  kubectl proxy
+ 1966  siege -c 300 -t 4 http://map.mpouyakh.com:80/polyfills.js
+ 1967  siege -c 300 -t 4 -v http://map.mpouyakh.com:80/polyfills.js
+ 1968  siege -c 300 -t 4 -v http://map.mpouyakh.com:80/styles.js
+ 1969  siege -c 300 -t 4 -v http://mpouyakh.com:80/static/js/main.chunk.js
+ 1970  siege -c 300 -t 4 -v http://map.mpouyakh.com
+ 1971  siege -c 300 -t 4 -v http://map.mpouyakh.com:80/main.js
+ 1972  siege -c 300 -t 4 -v http://mpouyakh.com/favicon.ico
+ 1973  siege -c 300 -t 4 -v http://mpouyakh.com/static/js/bundle.js
+ 1974  siege -c 300 -t 4 -v http://mpouyakh.com/SecondPage
+ 1975  siege -c 300 -t 4 -v http://mpouyakh.com/static/js/0.chunk.js
+ 1976  siege -c 300 -t 4 -v http://mpouyakh.com:80/static/js/main.chunk.js
+ 1977  siege -c 500 -t 4 -v http://mpouyakh.com:80/static/js/main.chunk.js
+ 1978  siege -c 700 -t 4 -v http://mpouyakh.com:80/static/js/main.chunk.js
+ 1979  siege -c 300 -t 4 -v http://mpouyakh.com:80/static/js/main.chunk.js
+ 1980  siege -c 500 -t 4 -v http://mpouyakh.com:80/static/js/main.chunk.js
+ 1981  siege -c 300 -t 4 -v http://mpouyakh.com:80/static/js/main.chunk.js
+ 1982  siege -c 500 -t 4 -v http://mpouyakh.com:80/static/js/main.chunk.js
+ 1983  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1984  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1985  kubectl get -n default deploy/pouya-nginx-ingress-controller -o yaml   | linkerd inject -   | kubectl apply -f -
+ 1986  ifconfig
+ 1987  kubectl proxy
+ 1988  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1989  linkerd dashboard --port 30000
+ 1990  export PATH=$PATH:$HOME/.linkerd2/bin
+ 1991  linkerd dashboard --port 30000
+ 1992  linkerd dashboard --port 30001
+ 1993  linkerd dashboard --port 30000
+ 1994  linkerd check
+ 1995  linkerd dashboard --port 30000
+ 1996  sudo chmod a+rw /dev/ttyACM0
+ 1997  cd ..
+ 1998  rm -r metrics-server/
+ 1999  history
+ 2000  history > commands.txt
